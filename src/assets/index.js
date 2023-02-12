@@ -1,0 +1,5 @@
+export {default as MenuHomeIcon} from './menu/MenuHomeIcon'
+export {default as SearchIcon} from './menu/SearchIcon'
+export {default as StoriesIcon} from './menu/StoriesIcon'
+export {default as UserIcon} from './menu/UserIcon'
+export {default as TrendingIcon} from './menu/TrendingIcon'
