@@ -1,40 +1,27 @@
 import { Link, Outlet } from "react-router-dom";
-import  * as icons from "../../../assets";
+import { menuIcons } from "../../../assets";
 import "./style.css";
 
+const paths = Object.keys(menuIcons).reduce((acc, icon) => {
+  const path = {
+    menu: icon,
+    path: icon !== "HomeIcon" ? icon.toLowerCase().replace("icon", "") : "/",
+  };
+  return [...acc, path];
+}, []);
 
-const paths = [
- {
-  menu: "Home",
-  path: "/"
- },
- {
-  menu: "Search",
-  path: "search"
- },
- {
-  menu: "Stories",
-  path: "stories"
- },
- {
-  menu: "Trending",
-  path: "trending"
- },
- {
-  menu: "User",
-  path: "user"
- }
-  
-]
-
-const ICONS = Object.values(icons);
 const BottomMenu = () => {
   return (
     <div className="bottom-menu">
       <div className="bottom-menu-inner">
-        {ICONS.map((Icon, index) => <Link to={paths[index].path} key={index}>
-            <Icon />
-        </Link>)}
+        {paths.map(({ menu, path }, index) => {
+          const Icon =  menuIcons[menu]
+          return (
+            <Link to={path} key={index}>
+              <Icon />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

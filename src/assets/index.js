@@ -1,5 +1,14 @@
-export {default as MenuHomeIcon} from './menu/MenuHomeIcon'
-export {default as SearchIcon} from './menu/SearchIcon'
-export {default as StoriesIcon} from './menu/StoriesIcon'
-export {default as UserIcon} from './menu/UserIcon'
-export {default as TrendingIcon} from './menu/TrendingIcon'
+import HomeIcon from "./menu/HomeIcon";
+import SearchIcon from "./menu/SearchIcon";
+import StoriesIcon from "./menu/StoriesIcon";
+import TrendingIcon from "./menu/TrendingIcon";
+import UserIcon from "./menu/UserIcon";
+
+export const menuIcons = {  // You can arrange in these list values to change the order of menu icons
+  HomeIcon,
+  TrendingIcon,
+  StoriesIcon,
+  SearchIcon,
+  UserIcon,
+};
+
